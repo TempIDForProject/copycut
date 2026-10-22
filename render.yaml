@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: copycut-payment
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: FIREBASE_PROJECT
+        value: copycut-000
+      - key: RZP_KEY_ID
+        sync: false
+      - key: RZP_KEY_SECRET
+        sync: false
+      - key: RZP_WEBHOOK_SECRET
+        sync: false
+      - key: RECEIPT_SECRET
+        sync: false
+      - key: INTERNAL_SECRET
+        sync: false
+      - key: ORIGINCHAIN_URL
+        sync: false
+      - key: ORIGINCHAIN_KEY
+        sync: false
+      - key: ALLOWED_ORIGINS
+        sync: false
